@@ -130,10 +130,11 @@ class BatchNormLayer(lasagne.layers.Layer):
             activation = norm_features
         if hasattr(self, 'b'):
             activation += self.b.dimshuffle(*self.dimshuffle_args)
-	if self.nonlinearity is not None:
+        if self.nonlinearity is not None:
             return self.nonlinearity(activation)
-	else:
-	    return activation
+        else:
+            return activation
+
 
 def batch_norm(layer, b=lasagne.init.Constant(0.), g=lasagne.init.Constant(1.), **kwargs):
     """

@@ -34,10 +34,10 @@ print(args)
 
 if not os.path.exists(args.out_dir):
     os.makedirs(args.out_dir) # make out_dir if it does not exist, copy current script to out_dir
-    print "Created folder {}".format(args.out_dir)
+    print ("Created folder {}".format(args.out_dir))
     shutil.copyfile(sys.argv[0], args.out_dir + '/training_script.py')
 else:
-    print "folder {} already exists. please remove it first.".format(args.out_dir)
+    print ("folder {} already exists. please remove it first.".format(args.out_dir))
     exit(1)
 
 rng = np.random.RandomState(args.seed) # fixed random seeds
